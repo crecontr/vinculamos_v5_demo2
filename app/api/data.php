@@ -14,7 +14,7 @@ $contrasenia = $_SERVER['PHP_AUTH_PW'];
 
 //$usuario = $json->usuario;
 //$contrasenia = $json->contrasenia;
-$institucion = "sanagustin";
+$institucion = "demo";
 
 include_once("../controller/medoo_users.php");
 $user = validateUser($usuario, $contrasenia);

@@ -438,7 +438,7 @@
 
 						var chartGraficoBarra1 = document.getElementById("graficoBarra1");
 						var myChart1 = new Chart(chartGraficoBarra1, {
-							type: 'bar',
+							type: 'horizontalBar',
 							data: barChartDataUnidades,
 							options: {
 								title: {
@@ -496,7 +496,7 @@
 
 						var chartGraficoBarra2 = document.getElementById("graficoBarra2");
 						var myChart1 = new Chart(chartGraficoBarra2, {
-							type: 'bar',
+							type: 'horizontalBar',
 							data: barChartDataEntornos,
 							options: {
 								title: {

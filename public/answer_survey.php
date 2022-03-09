@@ -84,7 +84,7 @@
 								<div class="box">
 									<div class="box-body">
 										<div class="col-md-12 text-center">
-											<img src='https://i0.wp.com/www.cftsanagustin.cl/wp-content/uploads/2018/11/logohead2x-e1542812192261.png?w=327&ssl=1' width='200px'>
+											<img src='http://demo2.vinculamosvm01.cl/vinculamos_v5_demo2/app/img/logo_texto.png' width='200px'>
 											<br>
 										</div>
 

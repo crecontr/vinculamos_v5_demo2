@@ -17,7 +17,7 @@
     	<!-- Sidebar user panel -->
       	<div class='user-panel' style="background-color: #474747;">
         	<div class='pull-left image'>
-          		<img src='../../img/sanagustin_logo.png' alt='User Image'>
+          		<img src='../../img/logo_solo.png' alt='User Image'>
 							<!--img src='../../img/logo_solo.png' alt='User Image'-->
         	</div>
         	<div class='pull-left info' >

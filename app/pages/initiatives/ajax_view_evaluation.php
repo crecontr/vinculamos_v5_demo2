@@ -89,14 +89,14 @@
 						<p>
 							Estimado/a,
 							<br>
-							En el marco de las actividades que el CFT San Agustín desarrolla en su línea de acción "<?php echo$nombrePrograma?>",
+							En el marco de las actividades que la universidad desarrolla en su línea de acción "<?php echo$nombrePrograma?>",
 							hemos realizado la actividad denominada <?php echo$nombreIniciativa?>, en la cual le agradecemos haber participado.
 							<br>
 							Con el propósito de continuar mejorando nuestro trabajo, le pedimos que responda la siguiente encuesta, que nos permitirá evaluar esta actividad.
 							<br>
 							Saluda atentamente a usted.
 							<br><br>
-							<strong>CFT San Agustín</strong>
+							<strong>La Universidad</strong>
 						</p>
 					</div>
 
@@ -248,7 +248,7 @@
 										<h5>CALIDAD DE LA EJECUCIÓN</h5>
 										<p>
 											A continuación le pedimos que evalúe de 0 a 3 la calidad en la ejecución de la actividad,
-											según los compromisos asumidos por CFT San Agustín, en que 0= no cumple, 1= cumple mínimamente;
+											según los compromisos asumidos por la universidad, en que 0= no cumple, 1= cumple mínimamente;
 											2= cumple medianamente y 3= cumple totalmente lo comprometido.
 											<br>
 											Si considera que algunos ítemes no estaban comprometidos, marque No Aplica.

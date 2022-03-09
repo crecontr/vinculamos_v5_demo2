@@ -7,10 +7,10 @@
 
 		$db = new Medoo(array(
 			'database_type' => 'mysql',
-			'database_name' => 'vinculam_vinculamos_v4_sanagustin',
+			'database_name' => 'vinculam_vinculamos_v4_demo2',
 			'server' => 'localhost',
 			//'server' => 'mysql',
-			'username' => 'vinculam_vinculamos_user_sanagus',
+			'username' => 'vinculam_vinculamos_user_demo',
 			'password' => '+vUTSb!P&VXh',
 			'charset' => 'utf8',
 		));

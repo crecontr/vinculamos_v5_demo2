@@ -63,7 +63,7 @@
 							  <div class="row">
 
 									<div class="col-lg-12 col-xs-6">
-										<p>El enlace de acceso: <a>https://sanagustin.vinculamosvm01.cl/vinculamos_v4_sanagustin/app/api/data.php</a>
+										<p>El enlace de acceso: <a>https://demo2.vinculamosvm01.cl/vinculamos_v5_demo2/app/api/data.php</a>
 											<br>Para acceder a los datos se debe realizar una consulta HTTPS mediante el método GET, enviando los datos de acceso del usuario mediante "Basic Auth".
 										</p>
 
@@ -89,7 +89,7 @@
         "id_mecanismo": "",
         "id_frecuencia": "",
         "estado": "",
-        "institucion": "sanagustin",
+        "institucion": "demo",
         "linea_accion_nombre": "",
         "mecanismo_nombre": "",
         "frecuencia_nombre": "",

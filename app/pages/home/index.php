@@ -29,7 +29,7 @@
     <section class="content">
 			<div class="row">
 				<div class="col-xs-12">
-					<img id="viga_logo" class="img-responsive" src="../../img/fondo_sanagustin.png" alt="User profile picture" width="100%">
+					<img id="viga_logo" class="img-responsive" src="../../img/fondo_home.png" alt="User profile picture" width="100%">
 				</div>
 				<!-- /.col -->
 			</div>

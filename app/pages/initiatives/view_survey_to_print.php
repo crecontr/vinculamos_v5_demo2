@@ -80,10 +80,10 @@
 								<div class="box">
 									<div class="box-body">
 										<div class="col-md-12 text-center">
-											<img src='https://i0.wp.com/www.cftsanagustin.cl/wp-content/uploads/2018/11/logohead2x-e1542812192261.png?w=327&ssl=1' width='200px'>
+											<img src='http://demo2.vinculamosvm01.cl/vinculamos_v5_demo2/app/img/logo_texto.png' width='200px'>
 											<br>
 										</div>
-										
+
 										<h2 class="box-title"><?php echo $encuesta[0]["titulo"];?></h1>
 										<p class="box-title" style="font-size:15px;"><?php echo str_replace("\n", "<br>", $encuesta[0]["descripcion"]);?></p>
 										<p><span class="text-red">* Obligatorio</span></p>

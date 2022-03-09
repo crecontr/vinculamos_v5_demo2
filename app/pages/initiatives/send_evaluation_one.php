@@ -106,17 +106,17 @@
 
 												$data = noeliaEncode("data" . $evaluation[0]["id"]);
 
-												$url = "http://sanagustin.vinculamosvm01.cl/vinculamos_v4_sanagustin/public/answer_evaluation.php?data=" . $data;
+												$url = "http://demo2.vinculamosvm01.cl/vinculamos_v5_demo2/public/answer_evaluation.php?data=" . $data;
 												$message = $encuesta[0]["correo_mensaje"];
 												if($message == "") {
 													$message = "Estimado/a,<br>";
 
-													$message .= "En el marco de las actividades que el CFT San Agustín desarrolla en su línea de acción \"$programaNombre\", ";
+													$message .= "En el marco de las actividades que la universidad desarrolla en su línea de acción \"$programaNombre\", ";
 													$message .= "hemos realizado la actividad denominada \"" . $iniciativaNombre . "\", en la cual le agradecemos haber participado.<br>";
 
 													$message .= "<br>Con el propósito de continuar mejorando nuestro trabajo, le pedimos que responda la siguiente <a href='$url'>encuesta</a>, que nos permitirá evaluar esta actividad.";
 													$message .= "<br>Saluda atentamente a usted. <br><br>";
-													$message .= "<img src='https://i0.wp.com/www.cftsanagustin.cl/wp-content/uploads/2018/11/logohead2x-e1542812192261.png?w=327&ssl=1' width='200px'>";
+													$message .= "<img src='http://demo2.vinculamosvm01.cl/vinculamos_v5_demo2/app/img/logo_texto.png' width='200px'>";
 
 												}
 

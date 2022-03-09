@@ -47,7 +47,7 @@
 					placeholder="Número de personas" maxlength="100" required>
 			</div>
 		</div>
-		<!--div class="row">
+		<div class="row">
 			<div class="col-xs-6 col-md-2">
 				<input type="checkbox" id="checkbox_sexo" name="checkbox_sexo"><label for="vg_programa">&nbsp;¿Género?</label>
 				<input type="number" class="form-control" id="vg_sexo_masculino" name="vg_sexo_masculino"
@@ -93,7 +93,7 @@
 				<input type="number" class="form-control" id="vg_nacionalidad_pueblo" name="vg_nacionalidad_pueblo"
 				placeholder="Pueblo originario" maxlength="100" readonly>
 			</div>
-		</div-->
+		</div>
 		<div class="row">
 			<div class="ol-md-12 pull-right">
 				<button type="submit" class="btn btn-orange"><span class="fa fa-plus"></span> Agregar</button>
@@ -109,14 +109,14 @@
 				<tr>
 					<th rowspan="2">Público participante esperado</th>
 					<th rowspan="2">Número de personas</th>
-					<!--th colspan="3">Género</th>
+					<th colspan="3">Género</th>
 					<th colspan="4">Segmento Etario</th>
 					<th colspan="2">Procedencia</th>
 					<th colspan="2">Vulnerabilidad</th>
 					<th colspan="3">Nacionalidad</th>
-					<th rowspan="2">Acciones</th-->
+					<th rowspan="2">Acciones</th>
 				</tr>
-				<!--tr>
+				<tr>
 					<th>Hombre</th>
 					<th>Mujer</th>
 					<th>Otro</th>
@@ -132,7 +132,7 @@
 					<th>Chileno</th>
 					<th>Migrante</th>
 					<th>Pueblo originario</th>
-				</tr-->
+				</tr>
 			</thead>
 			<tbody>
 				<?php
@@ -140,7 +140,7 @@
 						<tr>
 							<td><?php echo $datas[$i]['tipo'];?></td>
 							<td><?php echo number_format($datas[$i]['publico_general'], '0', ',','.');?></td>
-							<!--td><?php echo ($datas[$i]['aplica_sexo'] == "on" ? number_format($datas[$i]['sexo_masculino'], '0', ',','.'):"-");?></td>
+							<td><?php echo ($datas[$i]['aplica_sexo'] == "on" ? number_format($datas[$i]['sexo_masculino'], '0', ',','.'):"-");?></td>
 							<td><?php echo ($datas[$i]['aplica_sexo'] == "on" ? number_format($datas[$i]['sexo_femenino'], '0', ',','.'):"-");?></td>
 							<td><?php echo ($datas[$i]['aplica_sexo'] == "on" ? number_format($datas[$i]['sexo_otro'], '0', ',','.'):"-");?></td>
 							<td><?php echo ($datas[$i]['aplica_edad'] == "on" ? number_format($datas[$i]['edad_ninos'], '0', ',','.'):"-");?></td>
@@ -154,7 +154,7 @@
 
 							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_chileno'], '0', ',','.'):"-");?></td>
 							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_migrante'], '0', ',','.'):"-");?></td>
-							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_pueblo'], '0', ',','.'):"-");?></td-->
+							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_pueblo'], '0', ',','.'):"-");?></td>
 							<td>
 								<?php
 									if(canUpdateInitiatives()) {

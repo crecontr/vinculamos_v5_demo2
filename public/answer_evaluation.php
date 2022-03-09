@@ -114,20 +114,20 @@
 										?>
 										<p class="box-title" style="font-size:15px;">
 											<div class="col-md-12 text-center">
-												<img src='https://i0.wp.com/www.cftsanagustin.cl/wp-content/uploads/2018/11/logohead2x-e1542812192261.png?w=327&ssl=1' width='200px'>
+												<img src='http://demo2.vinculamosvm01.cl/vinculamos_v5_demo2/app/img/logo_texto.png' width='200px'>
 											</div>
 											<br>
 
 											Estimado/a,
 											<br>
-											En el marco de las actividades que el CFT San Agustín desarrolla en su línea de acción "<?php echo$nombrePrograma?>",
+											En el marco de las actividades que la universidad desarrolla en su línea de acción "<?php echo$nombrePrograma?>",
 											hemos realizado la actividad denominada <?php echo$nombreIniciativa?>, en la cual le agradecemos haber participado.
 											<br>
 											Con el propósito de continuar mejorando nuestro trabajo, le pedimos que responda la siguiente encuesta, que nos permitirá evaluar esta actividad.
 											<br>
 											Saluda atentamente a usted.
 											<br><br>
-											<strong>CFT San Agustín</strong>
+											<strong>La Universidad</strong>
 										</p>
 										<p>
 											<span class="text-red">* Obligatorio</span>
@@ -301,7 +301,7 @@
 																		<h5>CALIDAD DE LA EJECUCIÓN</h5>
 																		<p>
 																			A continuación le pedimos que evalúe de 0 a 3 la calidad en la ejecución de la actividad,
-																			según los compromisos asumidos por CFT San Agustín, en que 0= no cumple, 1= cumple mínimamente;
+																			según los compromisos asumidos por la universidad, en que 0= no cumple, 1= cumple mínimamente;
 																			2= cumple medianamente y 3= cumple totalmente lo comprometido.
 																			<br>
 																			Si considera que algunos ítemes no estaban comprometidos, marque No Aplica.
