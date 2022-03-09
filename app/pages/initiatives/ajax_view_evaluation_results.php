@@ -47,9 +47,13 @@
 					$respuestasKnowledgeSiNo = $respuestasKnowledgeSi + $respuestasKnowledgeNo;
 
 					$respuestas = getVisibleEvaluationAnswerByInitiativeKey($id_initiative, $id_evaluation, "CUMPLIMIENTO_O%");
-					$respuestasComplianceSi = countByAnswer(100, $respuestas);
-					$respuestasComplianceNo = countByAnswer(0, $respuestas);
-					$respuestasComplianceSiNo = $respuestasComplianceSi + $respuestasComplianceNo;
+					$respuestasCompliance0 = countByAnswer(0, $respuestas);
+					$respuestasCompliance25 = countByAnswer(25, $respuestas);
+					$respuestasCompliance50 = countByAnswer(50, $respuestas);
+					$respuestasCompliance75 = countByAnswer(75, $respuestas);
+					$respuestasCompliance100 = countByAnswer(100, $respuestas);
+					$respuestasComplianceSiNo = $respuestasCompliance0 + $respuestasCompliance25 +
+						$respuestasCompliance50 + $respuestasCompliance75 + $respuestasCompliance100;
 					$index = 0;
 				?>
 				<tr>
@@ -78,22 +82,40 @@
 
 				<!-- CUMPLIMIENTO -->
 				<tr>
-					<th rowspan="3"><?php echo$preguntasCompliance[$index]["texto"];?></th>
-					<td class="text-center">Si</td>
-					<td class="text-center"><?php echo $respuestasComplianceSi;?></td>
-					<td class="text-center"><?php echo round($respuestasComplianceSi / $respuestasComplianceSiNo) * 100;?>%</td>
+					<th rowspan="6"><?php echo$preguntasCompliance[$index]["texto"];?></th>
+					<td class="text-center">0%</td>
+					<td class="text-center"><?php echo $respuestasCompliance0;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance0 / $respuestasComplianceSiNo) * 100;?>%</td>
 					<td rowspan="3" class="text-center">
 						<?php
-							$miPorcentaje = round(($respuestasComplianceSi / $respuestasComplianceSiNo) * 100);
+							$miPuntaje = (0 * $respuestasCompliance0) + (25 * $respuestasCompliance25) +
+								(50 * $respuestasCompliance50) + (75 * $respuestasCompliance75) + (100 * $respuestasCompliance100);
+							$maxPuntaje = $respuestasComplianceSiNo*100;
+							$miPorcentaje = round(($miPuntaje / $maxPuntaje) * 100, 1);
 						?>
 						<input type='text' class='knob' data-skin="tron" data-readonly='true' value='<?php echo$miPorcentaje?>' data-fgColor='#F1943D' data-width='80' data-height='80'>
 						<div class="knob-label">% Resultado</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="text-center">No</td>
-					<td class="text-center"><?php echo $respuestasComplianceNo;?></td>
-					<td class="text-center"><?php echo round($respuestasComplianceNo / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+					<td class="text-center">25%</td>
+					<td class="text-center"><?php echo $respuestasCompliance25;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance25 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">50%</td>
+					<td class="text-center"><?php echo $respuestasCompliance50;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance50 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">75%</td>
+					<td class="text-center"><?php echo $respuestasCompliance75;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance75 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">100%</td>
+					<td class="text-center"><?php echo $respuestasCompliance100;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance100 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
 				</tr>
 				<tr>
 					<td class="text-center"><strong>Total</strong></td>
@@ -119,9 +141,13 @@
 					$respuestasKnowledgeSiNo = $respuestasKnowledgeSi + $respuestasKnowledgeNo;
 
 					$respuestas = getVisibleEvaluationAnswerByInitiativeKey($id_initiative, $id_evaluation, "CUMPLIMIENTO_R%");
-					$respuestasComplianceSi = countByAnswer(100, $respuestas);
-					$respuestasComplianceNo = countByAnswer(0, $respuestas);
-					$respuestasComplianceSiNo = $respuestasComplianceSi + $respuestasComplianceNo;
+					$respuestasCompliance0 = countByAnswer(0, $respuestas);
+					$respuestasCompliance25 = countByAnswer(25, $respuestas);
+					$respuestasCompliance50 = countByAnswer(50, $respuestas);
+					$respuestasCompliance75 = countByAnswer(75, $respuestas);
+					$respuestasCompliance100 = countByAnswer(100, $respuestas);
+					$respuestasComplianceSiNo = $respuestasCompliance0 + $respuestasCompliance25 +
+						$respuestasCompliance50 + $respuestasCompliance75 + $respuestasCompliance100;
 					$index = 1;
 				?>
 				<tr>
@@ -149,23 +175,42 @@
 				</tr>
 
 				<!-- CUMPLIMIENTO -->
+				<!-- CUMPLIMIENTO -->
 				<tr>
-					<th rowspan="3"><?php echo$preguntasCompliance[$index]["texto"];?></th>
-					<td class="text-center">Si</td>
-					<td class="text-center"><?php echo $respuestasComplianceSi;?></td>
-					<td class="text-center"><?php echo round($respuestasComplianceSi / $respuestasComplianceSiNo) * 100;?>%</td>
+					<th rowspan="6"><?php echo$preguntasCompliance[$index]["texto"];?></th>
+					<td class="text-center">0%</td>
+					<td class="text-center"><?php echo $respuestasCompliance0;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance0 / $respuestasComplianceSiNo) * 100;?>%</td>
 					<td rowspan="3" class="text-center">
 						<?php
-							$miPorcentaje = round(($respuestasComplianceSi / $respuestasComplianceSiNo) * 100);
+							$miPuntaje = (0 * $respuestasCompliance0) + (25 * $respuestasCompliance25) +
+								(50 * $respuestasCompliance50) + (75 * $respuestasCompliance75) + (100 * $respuestasCompliance100);
+							$maxPuntaje = $respuestasComplianceSiNo*100;
+							$miPorcentaje = round(($miPuntaje / $maxPuntaje) * 100, 1);
 						?>
 						<input type='text' class='knob' data-skin="tron" data-readonly='true' value='<?php echo$miPorcentaje?>' data-fgColor='#F1943D' data-width='80' data-height='80'>
 						<div class="knob-label">% Resultado</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="text-center">No</td>
-					<td class="text-center"><?php echo $respuestasComplianceNo;?></td>
-					<td class="text-center"><?php echo round($respuestasComplianceNo / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+					<td class="text-center">25%</td>
+					<td class="text-center"><?php echo $respuestasCompliance25;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance25 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">50%</td>
+					<td class="text-center"><?php echo $respuestasCompliance50;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance50 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">75%</td>
+					<td class="text-center"><?php echo $respuestasCompliance75;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance75 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">100%</td>
+					<td class="text-center"><?php echo $respuestasCompliance100;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance100 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
 				</tr>
 				<tr>
 					<td class="text-center"><strong>Total</strong></td>
@@ -191,9 +236,13 @@
 					$respuestasKnowledgeSiNo = $respuestasKnowledgeSi + $respuestasKnowledgeNo;
 
 					$respuestas = getVisibleEvaluationAnswerByInitiativeKey($id_initiative, $id_evaluation, "CUMPLIMIENTO_I%");
-					$respuestasComplianceSi = countByAnswer(100, $respuestas);
-					$respuestasComplianceNo = countByAnswer(0, $respuestas);
-					$respuestasComplianceSiNo = $respuestasComplianceSi + $respuestasComplianceNo;
+					$respuestasCompliance0 = countByAnswer(0, $respuestas);
+					$respuestasCompliance25 = countByAnswer(25, $respuestas);
+					$respuestasCompliance50 = countByAnswer(50, $respuestas);
+					$respuestasCompliance75 = countByAnswer(75, $respuestas);
+					$respuestasCompliance100 = countByAnswer(100, $respuestas);
+					$respuestasComplianceSiNo = $respuestasCompliance0 + $respuestasCompliance25 +
+						$respuestasCompliance50 + $respuestasCompliance75 + $respuestasCompliance100;
 					$index = 2;
 				?>
 				<tr>
@@ -222,22 +271,40 @@
 
 				<!-- CUMPLIMIENTO -->
 				<tr>
-					<th rowspan="3"><?php echo$preguntasCompliance[$index]["texto"];?></th>
-					<td class="text-center">Si</td>
-					<td class="text-center"><?php echo $respuestasComplianceSi;?></td>
-					<td class="text-center"><?php echo round($respuestasComplianceSi / $respuestasComplianceSiNo) * 100;?>%</td>
+					<th rowspan="6"><?php echo$preguntasCompliance[$index]["texto"];?></th>
+					<td class="text-center">0%</td>
+					<td class="text-center"><?php echo $respuestasCompliance0;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance0 / $respuestasComplianceSiNo) * 100;?>%</td>
 					<td rowspan="3" class="text-center">
 						<?php
-							$miPorcentaje = round(($respuestasComplianceSi / $respuestasComplianceSiNo) * 100);
+							$miPuntaje = (0 * $respuestasCompliance0) + (25 * $respuestasCompliance25) +
+								(50 * $respuestasCompliance50) + (75 * $respuestasCompliance75) + (100 * $respuestasCompliance100);
+							$maxPuntaje = $respuestasComplianceSiNo*100;
+							$miPorcentaje = round(($miPuntaje / $maxPuntaje) * 100, 1);
 						?>
 						<input type='text' class='knob' data-skin="tron" data-readonly='true' value='<?php echo$miPorcentaje?>' data-fgColor='#F1943D' data-width='80' data-height='80'>
 						<div class="knob-label">% Resultado</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="text-center">No</td>
-					<td class="text-center"><?php echo $respuestasComplianceNo;?></td>
-					<td class="text-center"><?php echo round($respuestasComplianceNo / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+					<td class="text-center">25%</td>
+					<td class="text-center"><?php echo $respuestasCompliance25;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance25 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">50%</td>
+					<td class="text-center"><?php echo $respuestasCompliance50;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance50 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">75%</td>
+					<td class="text-center"><?php echo $respuestasCompliance75;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance75 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
+				</tr>
+				<tr>
+					<td class="text-center">100%</td>
+					<td class="text-center"><?php echo $respuestasCompliance100;?></td>
+					<td class="text-center"><?php echo round($respuestasCompliance100 / $respuestasComplianceSiNo, 2) * 100;?>%</td>
 				</tr>
 				<tr>
 					<td class="text-center"><strong>Total</strong></td>
