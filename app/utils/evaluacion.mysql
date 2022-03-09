@@ -1,0 +1,307 @@
+CREATE TABLE `viga_evaluacion_competencias_pregunta` (
+  `id` int(11) NOT NULL,
+  `tipo_evaluador` varchar(100) NOT NULL,
+  `texto` varchar(200) NOT NULL,
+  `orden_visible` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `viga_evaluacion_competencias_pregunta`
+--
+
+INSERT INTO `viga_evaluacion_competencias_pregunta` (`id`, `tipo_evaluador`, `texto`, `orden_visible`) VALUES
+(1, 'Estudiante', 'Te sirvió la actividad para desarrollar algunas de las siguientes dimensiones de las competencias comprometidas? (Estudiante)', 1),
+(2, 'Profesor', 'Con qué nota evalúa usted la competencia de los y las estudiantes en la ejecución de la actividad, en las siguientes dimensiones: (Profesor)', 1),
+(3, 'Socio Comunitario', 'Con qué nota evalúa usted la competencia de los y las estudiantes en la ejecución de la actividad, en las siguientes dimensiones: (Socio Comunitario)', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_conocimiento_ori_pregunta`
+--
+
+CREATE TABLE `viga_evaluacion_conocimiento_ori_pregunta` (
+  `id` int(11) NOT NULL,
+  `tipo_evaluador` varchar(100) NOT NULL,
+  `texto` varchar(100) NOT NULL,
+  `orden_visible` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `viga_evaluacion_conocimiento_ori_pregunta`
+--
+
+INSERT INTO `viga_evaluacion_conocimiento_ori_pregunta` (`id`, `tipo_evaluador`, `texto`, `orden_visible`) VALUES
+(1, 'Estudiante', '¿Sabía usted que el objetivo de la actividad era? (Estudiante)', 1),
+(2, 'Estudiante', '¿Sabía usted que los resultados de la actividad eran? (Estudiante)', 2),
+(3, 'Estudiante', '¿Sabía usted que los impactos esperados de la actividad eran? (Estudiante)', 3),
+(4, 'Profesor', '¿Sabía usted que el objetivo de la actividad era? (Profesor)', 1),
+(5, 'Profesor', '¿Sabía usted que los resultados de la actividad eran? (Profesor)', 2),
+(6, 'Profesor', '¿Sabía usted que los impactos esperados de la actividad eran? (Profesor)', 3),
+(7, 'Socio Comunitario', '¿Sabía usted que el objetivo de la actividad era? (Socio Comunitario)', 1),
+(8, 'Socio Comunitario', '¿Sabía usted que los resultados de la actividad eran? (Socio Comunitario)', 2),
+(9, 'Socio Comunitario', '¿Sabía usted que los impactos esperados de la actividad eran? (Socio Comunitario)', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_cumplimiento_ori_pregunta`
+--
+
+CREATE TABLE `viga_evaluacion_cumplimiento_ori_pregunta` (
+  `id` int(11) NOT NULL,
+  `tipo_evaluador` varchar(100) NOT NULL,
+  `texto` varchar(100) NOT NULL,
+  `orden_visible` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `viga_evaluacion_cumplimiento_ori_pregunta`
+--
+
+INSERT INTO `viga_evaluacion_cumplimiento_ori_pregunta` (`id`, `tipo_evaluador`, `texto`, `orden_visible`) VALUES
+(1, 'Estudiante', '¿En qué % cree usted que se cumplió el objetivo? (Estudiante)', 1),
+(2, 'Estudiante', '¿En qué % cree usted que se    cumplieron los resultados? (Estudiante)', 2),
+(3, 'Estudiante', '¿En qué % cree usted que se cumplirán los impactos en los próximos meses? (Estudiante)', 3),
+(4, 'Profesor', '¿En qué % cree usted que se cumplió el objetivo? (Profesor)', 1),
+(5, 'Profesor', '¿En qué % cree usted que se    cumplieron los resultados? (Profesor)', 2),
+(6, 'Profesor', '¿En qué % cree usted que se cumplirán los impactos en los próximos meses? (Profesor)', 3),
+(7, 'Socio Comunitario', '¿En qué % cree usted que se cumplió el objetivo? (Socio Comunitario)', 1),
+(8, 'Socio Comunitario', '¿En qué % cree usted que se    cumplieron los resultados? (Socio Comunitario)', 2),
+(9, 'Socio Comunitario', '¿En qué % cree usted que se cumplirán los impactos en los próximos meses? (Socio Comunitario)', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_detalle_respuesta`
+--
+
+CREATE TABLE `viga_evaluacion_detalle_respuesta` (
+  `id` int(11) NOT NULL,
+  `id_iniciativa` int(11) NOT NULL,
+  `id_evaluacion` int(11) NOT NULL,
+  `correo_evaluador` varchar(100) NOT NULL,
+  `clave` varchar(100) NOT NULL,
+  `valor` varchar(100) NOT NULL DEFAULT '',
+  `autor` varchar(100) NOT NULL,
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_evaluadores`
+--
+
+CREATE TABLE `viga_evaluacion_evaluadores` (
+  `id` int(11) NOT NULL,
+  `id_iniciativa` int(11) NOT NULL,
+  `id_evaluacion` int(11) NOT NULL,
+  `tipo_evaluacion` varchar(100) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `correo_electronico` varchar(100) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  `visible` int(11) NOT NULL DEFAULT '1',
+  `autor` varchar(100) NOT NULL,
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_iniciativa`
+--
+
+CREATE TABLE `viga_evaluacion_iniciativa` (
+  `id` int(11) NOT NULL,
+  `id_iniciativa` int(11) NOT NULL,
+  `tipo_evaluacion` varchar(100) NOT NULL,
+  `visible` int(11) NOT NULL DEFAULT '1',
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_tipo_compromiso`
+--
+
+CREATE TABLE `viga_evaluacion_tipo_compromiso` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `visible` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `viga_evaluacion_tipo_compromiso`
+--
+
+INSERT INTO `viga_evaluacion_tipo_compromiso` (`id`, `nombre`, `visible`) VALUES
+(1, 'Plazo comprometido', 1),
+(2, 'Horarios comprometidos', 1),
+(3, 'Infraestructura ', 1),
+(4, 'Equipamiento', 1),
+(5, 'Conexión digital y/o logística', 1),
+(6, 'Desempeño de él o los profesores a cargo', 1),
+(7, 'Desempeño de estudiantes participantes', 1),
+(8, 'Calidad de las presentaciones (SII)', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_tipo_evaluador`
+--
+
+CREATE TABLE `viga_evaluacion_tipo_evaluador` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `visible` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `viga_evaluacion_tipo_evaluador`
+--
+
+INSERT INTO `viga_evaluacion_tipo_evaluador` (`id`, `nombre`, `visible`) VALUES
+(1, 'Estudiante', 1),
+(2, 'Profesor', 1),
+(3, 'Socio Comunitario', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `viga_evaluacion_tipo_evaluador_config`
+--
+
+CREATE TABLE `viga_evaluacion_tipo_evaluador_config` (
+  `id` int(11) NOT NULL,
+  `tipo_evaluador` varchar(100) NOT NULL,
+  `clave` varchar(100) NOT NULL,
+  `orden_visible` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `viga_evaluacion_tipo_evaluador_config`
+--
+
+INSERT INTO `viga_evaluacion_tipo_evaluador_config` (`id`, `tipo_evaluador`, `clave`, `orden_visible`) VALUES
+(1, 'Estudiante', 'CONOCIMIENTO_ORI', 1),
+(2, 'Estudiante', 'CUMPLIMIENTO_ORI', 2),
+(3, 'Estudiante', 'CALIDAD_EJECUCION', 3),
+(4, 'Estudiante', 'APORTE_COMPETENCIAS', 4),
+(5, 'Profesor', 'CONOCIMIENTO_ORI', 1),
+(6, 'Profesor', 'CUMPLIMIENTO_ORI', 2),
+(7, 'Profesor', 'CALIDAD_EJECUCION', 3),
+(8, 'Profesor', 'APORTE_COMPETENCIAS', 4),
+(9, 'Socio Comunitario', 'CONOCIMIENTO_ORI', 1),
+(10, 'Socio Comunitario', 'CALIDAD_EJECUCION', 1);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `viga_evaluacion_competencias_pregunta`
+--
+ALTER TABLE `viga_evaluacion_competencias_pregunta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_conocimiento_ori_pregunta`
+--
+ALTER TABLE `viga_evaluacion_conocimiento_ori_pregunta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_cumplimiento_ori_pregunta`
+--
+ALTER TABLE `viga_evaluacion_cumplimiento_ori_pregunta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_detalle_respuesta`
+--
+ALTER TABLE `viga_evaluacion_detalle_respuesta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_evaluadores`
+--
+ALTER TABLE `viga_evaluacion_evaluadores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_iniciativa`
+--
+ALTER TABLE `viga_evaluacion_iniciativa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_tipo_compromiso`
+--
+ALTER TABLE `viga_evaluacion_tipo_compromiso`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_tipo_evaluador`
+--
+ALTER TABLE `viga_evaluacion_tipo_evaluador`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `viga_evaluacion_tipo_evaluador_config`
+--
+ALTER TABLE `viga_evaluacion_tipo_evaluador_config`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_competencias_pregunta`
+--
+ALTER TABLE `viga_evaluacion_competencias_pregunta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_conocimiento_ori_pregunta`
+--
+ALTER TABLE `viga_evaluacion_conocimiento_ori_pregunta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_cumplimiento_ori_pregunta`
+--
+ALTER TABLE `viga_evaluacion_cumplimiento_ori_pregunta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_detalle_respuesta`
+--
+ALTER TABLE `viga_evaluacion_detalle_respuesta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_evaluadores`
+--
+ALTER TABLE `viga_evaluacion_evaluadores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_iniciativa`
+--
+ALTER TABLE `viga_evaluacion_iniciativa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_tipo_compromiso`
+--
+ALTER TABLE `viga_evaluacion_tipo_compromiso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_tipo_evaluador`
+--
+ALTER TABLE `viga_evaluacion_tipo_evaluador`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `viga_evaluacion_tipo_evaluador_config`
+--
+ALTER TABLE `viga_evaluacion_tipo_evaluador_config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;

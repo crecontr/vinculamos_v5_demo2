@@ -1,0 +1,125 @@
+[
+    {
+        "id": "",
+        "nombre": "",
+        "fecha_inicio": "",
+        "fecha_finalizacion": "",
+        "gestor_vinculo": "",
+        "responsable": "",
+        "responsable_cargo": "",
+        "formato_implementacion": "",
+        "ejecutante_estudiantes": "",
+        "ejecutante_docentes": "",
+        "ejecutante_colaboradores": "",
+        "ejecutante_otros": "",
+        "entorno_detalle": "",
+        "objetivo": "",
+        "descripcion": "",
+        "impacto_esperado": "",
+        "resultado_esperado": "",
+        "impacto_logrado_interno": "",
+        "impacto_logrado_externo": "",
+        "id_mecanismo": "",
+        "id_frecuencia": "",
+        "estado": "",
+        "institucion": "aiep",
+        "linea_accion_nombre": "",
+        "mecanismo_nombre": "",
+        "frecuencia_nombre": "",
+        "linea_accion_estrategias": [
+          {
+              "id": "",
+              "nombre": ""
+          }
+        ],
+        "linea_accion_secundarios": [
+            {
+                "id": "",
+                "nombre": ""
+            }
+        ],
+        "unidad_institucional": [
+            {
+                "id": "",
+                "nombre": ""
+            }
+        ],
+        "sedes": [
+            {
+                "id": "15",
+                "nombre": "AIEP Curicó"
+            }
+        ],
+        "paises": [
+            {
+                "id": "1",
+                "nombre": "Chile"
+            }
+        ],
+        "regiones": [
+            {
+                "id": "1",
+                "nombre": "Región de Tarapacá"
+            },
+            {
+                "id": "2",
+                "nombre": "Región de Antofagasta"
+            }
+        ],
+        "comunas": [
+            {
+                "id": "22",
+                "id_region": "1",
+                "nombre": "Iquique"
+            },
+            {
+                "id": "36",
+                "id_region": "2",
+                "nombre": "Tocopilla"
+            }
+        ],
+        "invi": {
+            "mecanismo": {
+                "etiqueta": "Núcreo de apoyo a la gestión empresarial (NAN-NAF)",
+                "valor": "85.00"
+            },
+            "cobertura_territorialidad": {
+                "etiqueta": "Nacional",
+                "valor": "100"
+            },
+            "cobertura_pertinencia": {
+                "etiqueta": "Publico Especifico",
+                "valor": 100
+            },
+            "cobertura_cantidad": {
+                "etiqueta": "Cumplimiento Total",
+                "valor": 100
+            },
+            "frecuencia": {
+                "etiqueta": "Una sola vez",
+                "valor": "33.00"
+            },
+            "evaluacionInterna": {
+                "valor": 20,
+                "etiqueta": "Muy Baja (0% - 20%)"
+            },
+            "evaluacionExterna": {
+                "valor": 100,
+                "etiqueta": "Muy Alto (81% - 100%)"
+            },
+            "evaluacion": {
+                "valor": 60,
+                "etiqueta": ""
+            },
+            "invi": {
+                "total": 76
+            }
+        },
+        "ods": [
+            {
+                "id": "17",
+                "nombre": "Alianzas para lograr los objetivos"
+            }
+        ]
+    }
+]
