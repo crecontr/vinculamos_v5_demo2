@@ -43,4 +43,36 @@
 			return $datas;
 		}
 	}
+
+	function updateODSByInitiativeFromPython($idInitiative = null, $odsArray = null, $autor = null) {
+		include("db_config.php");
+
+		$db->delete("viga_iniciativas_ods", [
+				"id_iniciativa" => $idInitiative
+			]
+		);
+		//echo "<br>query: " . $db->last();
+
+		$metasForLog = "";
+		for($i=0; $i<sizeof($odsArray); $i++) {
+			$ods = $odsArray[$i];
+			$metas = $ods["metas"];
+
+			for ($j=0; $j < sizeof($metas); $j++) {
+				$db->insert("viga_iniciativas_ods", [
+					"id_iniciativa" => $idInitiative,
+					"id_objetivo" => $ods["nombre"],
+					"id_meta" => $metas[$j]
+				]);
+				//echo "<br>query: " . $db->last();
+      }
+			$metasForLog .= ($metas[$i][""] . " ");
+		}
+
+		if(true) {
+			include_once("medoo_logs.php");
+			logAction($db, $autor, "iniciativa_ods", $idInitiative, "Modificación de ambito con valores {units => [$metasForLog], autor => $autor}");
+			return $datas;
+		}
+	}
 ?>
