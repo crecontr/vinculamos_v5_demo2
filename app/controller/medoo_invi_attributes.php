@@ -74,7 +74,10 @@
 				"fecha_creacion"
 			],
 			[
-				"visible" => "1"
+				"visible" => "1",
+				"ORDER" => [
+	        "puntaje" => "ASC",
+	      ]
 			]
 		);
 		//echo "query: " . $db->last();

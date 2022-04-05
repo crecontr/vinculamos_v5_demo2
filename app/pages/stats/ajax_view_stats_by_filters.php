@@ -80,6 +80,36 @@
 	include_once("../../controller/medoo_programs.php");
 	include_once("../../controller/medoo_invi_attributes.php");
 	include_once("../../controller/medoo_invi.php");
+	include_once("../../controller/medoo_participation_plan.php");
+	include_once("../../controller/medoo_participation_real.php");
+	include_once("../../controller/medoo_initiatives_resources_building.php");
+	include_once("../../controller/medoo_initiatives_resources_financial.php");
+	include_once("../../controller/medoo_initiatives_resources_human.php");
+
+	$totalPlanParticipation = 0;
+	$totalPlanParticipationMan = 0;
+	$totalPlanParticipationWoman = 0;
+	$totalPlanParticipationOther = 0;
+
+	$totalRealParticipationGender = 0;
+	$totalRealParticipationMan = 0;
+	$totalRealParticipationWoman = 0;
+	$totalRealParticipationOther = 0;
+
+	$totalRealParticipationAge = 0;
+	$totalRealParticipationBoys = 0;
+	$totalRealParticipationYoung = 0;
+	$totalRealParticipationAdult = 0;
+	$totalRealParticipationMayor = 0;
+
+	$totalRealParticipationOrigin = 0;
+	$totalRealParticipationRural = 0;
+	$totalRealParticipationUrban = 0;
+
+	$totalResources = 0;
+	$totalResourcesBuilding = 0;
+	$totalResourcesFinancial = 0;
+	$totalResourcesHuman = 0;
 
 	$sumatoriaInvi = 0;
 	$promedioInvi = 0;
@@ -105,6 +135,41 @@
 				$globalODS[] = $myObjetives[$j];
 			}
 		}
+
+		//$participationReal = sumGeneralRealParticipationByInitiative($datas[$i]['id']);
+		//$totalRealParticipation += $participationReal;
+		$participationRealMan = sumGeneralRealParticipationByInitiativeGender($datas[$i]['id'], "sexo_masculino");
+		$totalRealParticipationMan += $participationRealMan;
+		$participationRealWoman = sumGeneralRealParticipationByInitiativeGender($datas[$i]['id'], "sexo_femenino");
+		$totalRealParticipationWoman += $participationRealWoman;
+		$participationRealOther = sumGeneralRealParticipationByInitiativeGender($datas[$i]['id'], "sexo_otro");
+		$totalRealParticipationOther += $participationRealOther;
+		$totalRealParticipationGender += ($participationRealMan + $participationRealWoman + $participationRealOther);
+
+		$resourcesBuilding = sumBuildingResourcesByInitiative($datas[$i]['id']);
+		$totalResourcesBuilding += $resourcesBuilding;
+		$resourcesFinancial = sumCashResourcesByInitiative($datas[$i]['id']);
+		$totalResourcesFinancial += $resourcesFinancial;
+		$resourcesHuman = sumHumanResourcesByInitiative($datas[$i]['id']);
+		$totalResourcesHuman += $resourcesHuman;
+		$totalResources += ($resourcesBuilding + $resourcesFinancial + $resourcesHuman);
+
+		$participationRealBoys = sumGeneralRealParticipationByInitiativeAge($datas[$i]['id'], "edad_ninos");
+		$totalRealParticipationBoys += $participationRealBoys;
+		$participationRealYoung = sumGeneralRealParticipationByInitiativeAge($datas[$i]['id'], "edad_jovenes");
+		$totalRealParticipationYoung += $participationRealYoung;
+		$participationRealAdult = sumGeneralRealParticipationByInitiativeAge($datas[$i]['id'], "edad_adultos");
+		$totalRealParticipationAdult += $participationRealAdult;
+		$participationRealMayor = sumGeneralRealParticipationByInitiativeAge($datas[$i]['id'], "edad_adultos_mayores");
+		$totalRealParticipationMayor += $participationRealMayor;
+		$totalRealParticipationAge += ($participationRealBoys + $participationRealYoung
+			+ $participationRealAdult + $participationRealMayor);
+
+		$participationRealUrban = sumGeneralRealParticipationByInitiativeOrigin($datas[$i]['id'], "procedencia_urbano");
+		$totalRealParticipationUrban += $participationRealUrban;
+		$participationRealRural = sumGeneralRealParticipationByInitiativeOrigin($datas[$i]['id'], "procedencia_rural");
+		$totalRealParticipationRural += $participationRealRural;
+		$totalRealParticipationOrigin += ($participationRealUrban + $participationRealRural);
 	}
 	$promedioInvi = round($sumatoriaInvi / sizeof($datas));
 
@@ -120,8 +185,10 @@
 	$allEnvironmentsCont = array();
 	$scriptEtiquetasEnvironments = "";
 	$scriptCantidadesEnvironments = "";
+	$sumaTotalEnvironments = 0;
 	for ($i=0; $i < sizeof($allEnvironments); $i++) {
 		$allEnvironmentsCont[$i] = getFilterInitiativesByEnvironment($datas, $allEnvironments[$i]["id"]);
+		$sumaTotalEnvironments += sizeof($allEnvironmentsCont[$i]);
 
 		$scriptEtiquetasEnvironments .= ("'" . $allEnvironments[$i]["nombre"] . "'");
 		$scriptCantidadesEnvironments .= ("'" . sizeof($allEnvironmentsCont[$i]) . "'");
@@ -141,8 +208,10 @@
 	$allUnitsCont = array();
 	$scriptEtiquetasUnits = "";
 	$scriptCantidadesUnits = "";
+	$sumaTotalUnits = 0;
 	for ($i=0; $i < sizeof($allUnits); $i++) {
 		$allUnitsCont[$i] = getFilterInitiativesByCollege($datas, $allUnits[$i]["id"]);
+		$sumaTotalUnits += sizeof($allUnitsCont[$i]);
 
 		$scriptEtiquetasUnits .= ("'" . $allUnits[$i]["nombre"] . "'");
 		$scriptCantidadesUnits .= ("'" . sizeof($allUnitsCont[$i]) . "'");
@@ -173,6 +242,182 @@
 			<div class="tab-content">
 				<div class="tab-pane active" id="subtab_1Repor1">
 					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-4">
+								<h4>Participantes reales: <?php echo $totalRealParticipationGender;?></h4>
+								<div class="box-footer no-padding">
+		              <ul class="nav nav-pills nav-stacked">
+		                <li>
+											<a href="#">Hombre
+												<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationMan;?>
+													<?php echo " (" . round($totalRealParticipationMan/$totalRealParticipationGender * 100, 0) . "%)";?>
+												</span>
+											</a>
+		                </li>
+		                <li>
+											<a href="#">Mujer
+		                  	<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationWoman;?>
+													<?php echo " (" . round($totalRealParticipationWoman/$totalRealParticipationGender * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">Otro
+			                	<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationOther;?>
+													<?php echo " (" . round($totalRealParticipationOther/$totalRealParticipationGender * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+		              </ul>
+		            </div>
+							</div>
+
+							<div class="col-md-4">
+								<h4>Segmento etareo</h4>
+								<div class="box-footer no-padding">
+		              <ul class="nav nav-pills nav-stacked">
+		                <li>
+											<a href="#">Niños
+												<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationBoys;?>
+													<?php echo " (" . round($totalRealParticipationBoys/$totalRealParticipationAge * 100, 0) . "%)";?>
+												</span>
+											</a>
+		                </li>
+		                <li>
+											<a href="#">Jóvenes
+		                  	<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationYoung;?>
+													<?php echo " (" . round($totalRealParticipationYoung/$totalRealParticipationAge * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">Adultos
+			                	<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationAdult;?>
+													<?php echo " (" . round($totalRealParticipationAdult/$totalRealParticipationAge * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">Adultos Mayores
+			                	<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationMayor;?>
+													<?php echo " (" . round($totalRealParticipationMayor/$totalRealParticipationGender * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+		              </ul>
+		            </div>
+							</div>
+
+							<div class="col-md-4">
+								<h4>Procedencia</h4>
+								<div class="box-footer no-padding">
+		              <ul class="nav nav-pills nav-stacked">
+										<li>
+											<a href="#">Rural
+		                  	<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationRural;?>
+													<?php echo " (" . round($totalRealParticipationRural/$totalRealParticipationOrigin * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">Urbana
+												<span class="pull-right text-blue">
+													<?php echo $totalRealParticipationUrban;?>
+													<?php echo " (" . round($totalRealParticipationUrban/$totalRealParticipationOrigin * 100, 0) . "%)";?>
+												</span>
+											</a>
+		                </li>
+									</ul>
+		            </div>
+							</div>
+
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								<h4>Recursos totales: <?php echo $totalResources;?></h4>
+								<div class="box-footer no-padding">
+		              <ul class="nav nav-pills nav-stacked">
+		                <li>
+											<a href="#">Dinero
+		                  	<span class="pull-right text-blue">
+													<?php echo $totalResourcesFinancial;?>
+													<?php echo " (" . round($totalResourcesFinancial/$totalResources * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+		                <li>
+											<a href="#">Infraestructura
+												<span class="pull-right text-blue">
+													<?php echo $totalResourcesBuilding;?>
+													<?php echo " (" . round($totalResourcesBuilding/$totalResources * 100, 0) . "%)";?>
+												</span>
+											</a>
+		                </li>
+										<li>
+											<a href="#">RR.HH.
+			                	<span class="pull-right text-blue">
+													<?php echo $totalResourcesHuman;?>
+													<?php echo " (" . round($totalResourcesHuman/$totalResources * 100, 0) . "%)";?>
+												</span>
+											</a>
+										</li>
+		              </ul>
+		            </div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								<h4>Unidades institucionales</h4>
+								<div class="box-footer no-padding">
+		              <ul class="nav nav-pills nav-stacked">
+										<?php
+										 	for ($i=0; $i < sizeof($allUnits); $i++) { ?>
+												<li>
+													<a href="#"> <?php echo $allUnits[$i]["nombre"];?>
+				                  	<span class="pull-right text-blue">
+															<?php echo sizeof($allUnitsCont[$i]);?>
+															<?php echo " (" . round(sizeof($allUnitsCont[$i])/$sumaTotalUnits * 100, 0) . "%)";?>
+														</span>
+													</a>
+												</li>
+										<?php
+											} ?>
+		              </ul>
+		            </div>
+							</div>
+
+							<div class="col-md-6">
+								<h4>Entorno Relevante</h4>
+								<div class="box-footer no-padding">
+		              <ul class="nav nav-pills nav-stacked">
+										<?php
+										 	for ($i=0; $i < sizeof($allEnvironments); $i++) { ?>
+												<li>
+													<a href="#"> <?php echo $allEnvironments[$i]["nombre"];?>
+				                  	<span class="pull-right text-blue">
+															<?php echo sizeof($allEnvironmentsCont[$i]);?>
+															<?php echo " (" . round(sizeof($allEnvironmentsCont[$i])/$sumaTotalEnvironments * 100, 0) . "%)";?>
+														</span>
+													</a>
+												</li>
+										<?php
+											} ?>
+		              </ul>
+		            </div>
+							</div>
+
+						</div>
+						<br>
 						<div class="row">
 							<div class="col-lg-6 col-xs-6">
 		          	<!-- small box -->

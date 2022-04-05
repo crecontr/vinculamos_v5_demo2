@@ -158,4 +158,63 @@
 		//echo "<br>>>query: " . $db->last() . "<br><br>";
 		return $datas;
 	}
+
+	function sumGeneralRealParticipationByInitiative($id_iniciativa = null) {
+		include("db_config.php");
+
+		$datas = $db->sum("viga_participacion_real",
+			"publico_general",
+			[
+				"visible" => "1",
+				"id_iniciativa" => $id_iniciativa
+			]
+		);
+		//echo "<br>>>query: " . $db->last() . "<br><br>";
+		return $datas;
+	}
+
+	function sumGeneralRealParticipationByInitiativeGender($id_iniciativa = null, $genderColumn = null) {
+		include("db_config.php");
+
+		$datas = $db->sum("viga_participacion_real",
+			$genderColumn,
+			[
+				"visible" => "1",
+				"id_iniciativa" => $id_iniciativa,
+				"aplica_sexo" => "on"
+			]
+		);
+		//echo "<br>>>query: " . $db->last() . "<br><br>";
+		return $datas;
+	}
+
+	function sumGeneralRealParticipationByInitiativeAge($id_iniciativa = null, $ageColumn = null) {
+		include("db_config.php");
+
+		$datas = $db->sum("viga_participacion_real",
+			$ageColumn,
+			[
+				"visible" => "1",
+				"id_iniciativa" => $id_iniciativa,
+				"aplica_edad" => "on"
+			]
+		);
+		//echo "<br>>>query: " . $db->last() . "<br><br>";
+		return $datas;
+	}
+
+	function sumGeneralRealParticipationByInitiativeOrigin($id_iniciativa = null, $originColumn = null) {
+		include("db_config.php");
+
+		$datas = $db->sum("viga_participacion_real",
+			$originColumn,
+			[
+				"visible" => "1",
+				"id_iniciativa" => $id_iniciativa,
+				"aplica_procedencia" => "on"
+			]
+		);
+		//echo "<br>>>query: " . $db->last() . "<br><br>";
+		return $datas;
+	}
 ?>

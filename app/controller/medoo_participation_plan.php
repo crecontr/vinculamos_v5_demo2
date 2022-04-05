@@ -130,4 +130,33 @@
 		//echo "<br>>>query: " . $db->last() . "<br><br>";
 		return $datas;
 	}
+
+	function sumGeneralPlanParticipationByInitiative($id_iniciativa = null) {
+		include("db_config.php");
+
+		$datas = $db->sum("viga_participacion_plan",
+			"publico_general",
+			[
+				"visible" => "1",
+				"id_iniciativa" => $id_iniciativa
+			]
+		);
+		//echo "<br>>>query: " . $db->last() . "<br><br>";
+		return $datas;
+	}
+
+	function sumGeneralPlanParticipationByInitiativeGender($id_iniciativa = null, $genderColumn = null) {
+		include("db_config.php");
+
+		$datas = $db->sum("viga_participacion_plan",
+			$genderColumn,
+			[
+				"visible" => "1",
+				"id_iniciativa" => $id_iniciativa,
+				"aplica_sexo" => "on"
+			]
+		);
+		//echo "<br>>>query: " . $db->last() . "<br><br>";
+		return $datas;
+	}
 ?>
