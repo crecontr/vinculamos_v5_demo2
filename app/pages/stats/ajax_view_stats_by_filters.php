@@ -459,7 +459,7 @@
 
 					<div class="col-md-4">
 						<div class="row text-center">
-							<h3>INVI* Institucional Global</h3>
+							<h3>Índice de vinculación INVI</h3>
 							<input type='text' class='knob' data-skin="tron" data-readonly='true' value='<?php echo$promedioInvi?>' data-fgColor='#F1943D' data-width='220' data-height='220'>
 							<div class="knob-label">Puntaje promedio</div>
 							<p>*INVI significa indice de vinculación y considera las variables mecanismo, cobertura, frecuencia y evaluación. </p>
@@ -495,7 +495,7 @@
 					                	<th>ID</th>
 														<th>Nombre</th>
 														<th>Linea de acción</th>
-														<th>Tipo de acción</th>
+														<th>Mecanismo</th>
 														<th>INVI</th>
 														<th style="width:110px">Acciones</th>
 													</tr>

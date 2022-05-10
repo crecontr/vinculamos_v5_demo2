@@ -93,7 +93,7 @@
       	<th>ID</th>
 				<th>Nombre</th>
 				<th>Linea de acción</th>
-				<th>Tipo de acción</th>
+				<th>Mecanismo</th>
 				<th style="width:210px">Acciones</th>
       </tr>
 		</thead>
@@ -175,14 +175,14 @@
 														</a>
 													</li>
 
-													<li>
+													<!--li>
 														<a data-toggle="modal" data-target="#editStatusFillment"
 															data-id_iniciativa='<?php echo noeliaEncode($datas[$i]['id']);?>'
 															data-estado_completitud ='<?php echo $datas[$i]['estado_completitud']?>'
 															title='Estado Completitud'>
 															<i class="fa fa-edit"></i> Actualizar completitud
 														</a>
-													</li>
+													</li-->
 											<?php
 												} ?>
 

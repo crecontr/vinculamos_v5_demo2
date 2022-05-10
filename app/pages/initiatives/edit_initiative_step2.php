@@ -188,13 +188,13 @@
 										<?php
 											} else { ?>
 												<div class="col-md-6">
-			                		<label for="vg_objetivo">Objetivo de la actividad (desafío identificado) <span class="text-blue">* Tributación a ODS</span></label>
+			                		<label for="vg_objetivo">Objetivo (desafío identificado) <span class="text-blue">* Tributación a ODS</span></label>
 			                  	<textarea class="form-control textarea" placeholder="Objetivo de la actividad (desafío identificado)" id="vg_objetivo" name="vg_objetivo" minlength=0
 														title="Objetivo de la actividad (desafío identificado)"
 														style="width: 100%; height: 70px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd;"><?php echo$datas[0]["objetivo"];?></textarea>
 			                	</div>
 												<div class="col-md-6">
-			                		<label for="vg_descripcion">Descripción de la actividad (¿Qué se hará para lograr el objetivo?) <span class="text-blue">* Tributación a ODS</span></label>
+			                		<label for="vg_descripcion">Descripción (¿Qué se hará para lograr el objetivo?) <span class="text-blue">* Tributación a ODS</span></label>
 			                  	<textarea class="form-control textarea" placeholder="Descripción de la actividad (¿Qué se hará para lograr el objetivo?)" id="vg_descripcion" name="vg_descripcion"
 														title="Descripción de la actividad (¿Qué se hará para lograr el objetivo?)" minlength=0
 														style="width: 100%; height: 70px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd;"><?php echo$datas[0]["descripcion"];?></textarea>

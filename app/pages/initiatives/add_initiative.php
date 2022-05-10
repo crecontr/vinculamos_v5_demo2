@@ -156,9 +156,9 @@
 										</select>
                   </div>
 									<div class="col-xs-6 col-md-4">
-                		<label for="vg_mecanismo">Tipo de acción <span class="text-red">*</span></label>
+                		<label for="vg_mecanismo">Mecanismo <span class="text-red">*</span></label>
                   	<select class="selectpicker form-control" id="vg_mecanismo" name="vg_mecanismo"
-											title="Tipo de acción" data-live-search="true" required>
+											title="Mecanismo" data-live-search="true" required>
 											<?php
 												foreach($mechanisms as $mechanism) {
 													echo "<option value='" . $mechanism['id'] . "'>" . $mechanism['nombre']. "</option>";

@@ -205,7 +205,7 @@
 							$mechanisms = getMechanism($datas[0]["id_mecanismo"]);
 						?>
 						<tr class="filaColor">
-      				<td><b>Tipo de actividad</b></td>
+      				<td><b>Mecanismo</b></td>
 							<td><?php echo $mechanisms[0]["nombre"]?></td>
       			</tr>
 
@@ -475,15 +475,15 @@
       				<td><b>Cantidad de procedencia urbana</b></td>
       				<td><?php echo $totalProcedenciaUrbana?></td>
       			</tr>
-						<tr class="filaColor">
+						<!--tr class="filaColor">
       				<td><b>Cantidad de personas pertenecientes a pueblos originarios</b></td>
       				<td><?php echo $totalVulnerabilidadPueblo?></td>
-      			</tr>
-						<tr>
+      			</tr-->
+						<tr class="filaColor">
       				<td><b>Cantidad de personas con discapacidad</b></td>
       				<td><?php echo $totalVulnerabilidadDiscapacidad?></td>
       			</tr>
-						<tr class="filaColor">
+						<tr>
       				<td><b>Cantidad de personas en situación de pobreza</b></td>
       				<td><?php echo $totalVulnerabilidadPobreza?></td>
       			</tr>

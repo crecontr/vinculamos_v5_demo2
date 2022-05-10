@@ -91,7 +91,7 @@
 				<input type="number" class="form-control" id="vg_nacionalidad_migrante" name="vg_nacionalidad_migrante"
 					placeholder="Migrante" maxlength="100" readonly>
 				<input type="number" class="form-control" id="vg_nacionalidad_pueblo" name="vg_nacionalidad_pueblo"
-				placeholder="Pueblo originario" maxlength="100" readonly>
+				placeholder="Pueblo originario" maxlength="100" readonly style="display: none">
 			</div>
 		</div>
 		<div class="row">
@@ -113,7 +113,7 @@
 					<th colspan="4">Segmento Etario</th>
 					<th colspan="2">Procedencia</th>
 					<th colspan="2">Vulnerabilidad</th>
-					<th colspan="3">Nacionalidad</th>
+					<th colspan="2">Nacionalidad</th>
 					<th rowspan="2">Acciones</th>
 				</tr>
 				<tr>
@@ -131,7 +131,7 @@
 
 					<th>Chileno</th>
 					<th>Migrante</th>
-					<th>Pueblo originario</th>
+					<!--th>Pueblo originario</th-->
 				</tr>
 			</thead>
 			<tbody>
@@ -154,7 +154,7 @@
 
 							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_chileno'], '0', ',','.'):"-");?></td>
 							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_migrante'], '0', ',','.'):"-");?></td>
-							<td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_pueblo'], '0', ',','.'):"-");?></td>
+							<!--td><?php echo ($datas[$i]['aplica_nacionalidad'] == "on" ? number_format($datas[$i]['nacionalidad_pueblo'], '0', ',','.'):"-");?></td-->
 							<td>
 								<?php
 									if(canUpdateInitiatives()) {

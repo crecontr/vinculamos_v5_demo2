@@ -110,7 +110,7 @@
 			<table id="tableResult" class="table table-bordered table-hover">
 				<thead>
 					<tr>
-						<th class="" width="40%">Tipo de acción</th>
+						<th class="" width="40%">Mecanismo</th>
 						<td class="text-center" width="40%"><?php echo $inviResult["mecanismo"]["etiqueta"]?></td>
 						<th class="text-center" width="20%"><?php echo $inviResult["mecanismo"]["valor"]?></th>
 					</tr>
@@ -187,14 +187,14 @@
 		<table id="tableResult" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th class="" width="80%">Índice de Vinculación (INVI Global)</th>
+					<th class="" width="80%">Índice de vinculación INVI</th>
 					<th class="text-center" width="20%"><?php echo $inviResult["invi"]["total"];?></th>
 				<tr>
 			</thead>
 		</table>
 	</div>
 
-	<div class="box-body table-responsive">
+	<!--div class="box-body table-responsive">
 		<table id="tableResult" class="table table-bordered table-hover">
 			<thead>
 				<tr>
@@ -203,4 +203,4 @@
 				<tr>
 			</thead>
 		</table>
-	</div>
+	</div-->

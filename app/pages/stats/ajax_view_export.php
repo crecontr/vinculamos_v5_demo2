@@ -43,7 +43,7 @@
 				<th>Impacto logrado externo</th>
 				<th>Estado</th>
 				<th>Linea de acción</th>
-				<th>Tipo de acción</th>
+				<th>Mecanismo</th>
 				<th>Frecuencia</th>
 				<th>Linea de acción secundaria</th>
 				<th>Unidad institucional</th>

@@ -199,9 +199,9 @@
 												</select>
 										</div>
 										<div class="col-xs-2">
-											<label for="mechanism">Tipo de acción</label>
+											<label for="mechanism">Mecanismo</label>
 												<select class="selectpicker form-control" id="mechanism[]" name="mechanism[]"
-													title="Tipo de acción" data-live-search="true" multiple>
+													title="Mecanismo" data-live-search="true" multiple>
 													<?php
 														foreach($mechanisms as $mechanism) {
 															echo "<option value='" . $mechanism['id'] . "'>" . $mechanism['nombre']. "</option>";

@@ -292,7 +292,7 @@
 							$mechanisms = getMechanism($datas[0]["id_mecanismo"]);
 						?>
 						<tr>
-      				<td><b>Tipo de actividad</b></td>
+      				<td><b>Mecanismo</b></td>
 							<td><?php echo $mechanisms[0]["nombre"]?></td>
       			</tr>
 
@@ -562,15 +562,15 @@
       				<td><b>Cantidad de procedencia urbana</b></td>
       				<td><?php echo $totalProcedenciaUrbana?></td>
       			</tr>
-						<tr>
+						<!--tr>
       				<td><b>Cantidad de personas pertenecientes a pueblos originarios</b></td>
       				<td><?php echo $totalVulnerabilidadPueblo?></td>
-      			</tr>
-						<tr class="filaColor">
+      			</tr-->
+						<tr>
       				<td><b>Cantidad de personas con discapacidad</b></td>
       				<td><?php echo $totalVulnerabilidadDiscapacidad?></td>
       			</tr>
-						<tr>
+						<tr class="filaColor">
       				<td><b>Cantidad de personas en situación de pobreza</b></td>
       				<td><?php echo $totalVulnerabilidadPobreza?></td>
       			</tr>
@@ -593,12 +593,12 @@
 							$inviResult = calculateInviByInitiative($datas[0]['id']);
 						?>
 						<tr class="filaColor">
-      				<td><b>INVI</b></td>
+      				<td><b>Índice de vinculación INVI</b></td>
 							<td><?php echo $inviResult["invi"]["total"];?></td>
       			</tr>
 
 						<tr>
-      				<td><b>INVI - Tipo de actividad</b></td>
+      				<td><b>INVI - Mecanismo</b></td>
 							<td><?php echo $inviResult["mecanismo"]["valor"];?></td>
       			</tr>
 

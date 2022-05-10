@@ -7,7 +7,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 				<h4 class="modal-title" id="myModalLabel">
-					<i class='glyphicon glyphicon-edit'></i> Calculo de Índice de Vinculación con el Medio
+					<i class='glyphicon glyphicon-edit'></i> Calculo de Índice de vinculación INVI
 				</h4>
 			</div>
 			<div class="modal-body">
