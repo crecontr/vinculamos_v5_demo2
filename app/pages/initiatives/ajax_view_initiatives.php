@@ -104,10 +104,11 @@
 					//$misMetas = getVisibleMeasuresByInitiative($datas[$i]['id']);
 					//updateODSByInitiative($datas[$i]['id'], $misMetas, "superadmin");
 
+					/*
 					$salida = array();
 			    $entrada = eliminar_acentos($datas[$i]["nombre"] . " " . $datas[$i]["objetivo"] . " " . $datas[$i]["descripcion"] . " " . $datas[$i]["impacto_logrado_interno"]);
-			    exec("python /Applications/MAMP/htdocs/vinculamos_v5_ucm/test/AlgoritmoODS.py '$entrada'", $salida);
-					//exec("python /home/vinculam/public_html/ucm/vinculamos_v5_ucm/test/AlgoritmoODS.py '$entrada'", $salida);
+			    //exec("python /Applications/MAMP/htdocs/vinculamos_v5_ucm/test/AlgoritmoODS.py '$entrada'", $salida);
+					exec("python /home/vinculam/public_html/algoritmoODS/AlgoritmoODS.py '$entrada'", $salida);
 					$arrayMetas = array();
 			    $arrayObjetivos = array();
 			    for($j = 0; $j < count($salida); $j++){
@@ -129,6 +130,7 @@
 			      }
 			    }
 					updateODSByInitiativeFromPython($datas[$i]['id'], $arrayObjetivos, "superadmin");
+					*/
 
 					?>
  					<tr>
