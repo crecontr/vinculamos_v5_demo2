@@ -7,6 +7,7 @@
 		header('Location: ../../index.php');
 	}
 
+	include_once("../../config/settings.php");
 	include_once("../../utils/user_utils.php");
 	if(!canCreateInitiatives()) {
 		header('Location: ../../index.php');
@@ -15,6 +16,7 @@
 	$nombre_usuario = $_SESSION["nombre_usuario"];
 	$institucion = getInstitution();
 
+	/*
 	include_once("../../controller/medoo_colleges.php");
 	$colleges = getVisibleCollegesByInstitution($institucion);
 
@@ -41,13 +43,13 @@
 	include_once("../../controller/medoo_geographic.php");
 	$countries = getVisibleCountries();
 	$countries[0]["selected"] = "selected";
-
+	*/
 ?>
 
 <!DOCTYPE html>
 <html>
 <?php include_once("../include/header.php")?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css"-->
 
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
@@ -272,7 +274,7 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script-->
 
 <script>
 	$(document).ready(function(){

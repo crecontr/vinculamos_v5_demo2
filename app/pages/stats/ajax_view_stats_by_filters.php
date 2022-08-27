@@ -250,7 +250,7 @@
 		                <li>
 											<a href="#">Hombre
 												<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationMan;?>
+													<?php echo number_format($totalRealParticipationMan, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationMan/$totalRealParticipationGender * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -258,7 +258,7 @@
 		                <li>
 											<a href="#">Mujer
 		                  	<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationWoman;?>
+													<?php echo number_format($totalRealParticipationWoman, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationWoman/$totalRealParticipationGender * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -266,7 +266,7 @@
 										<li>
 											<a href="#">Otro
 			                	<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationOther;?>
+													<?php echo number_format($totalRealParticipationOther, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationOther/$totalRealParticipationGender * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -282,7 +282,7 @@
 		                <li>
 											<a href="#">Niños
 												<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationBoys;?>
+													<?php echo number_format($totalRealParticipationBoys, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationBoys/$totalRealParticipationAge * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -290,7 +290,7 @@
 		                <li>
 											<a href="#">Jóvenes
 		                  	<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationYoung;?>
+													<?php echo number_format($totalRealParticipationYoung, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationYoung/$totalRealParticipationAge * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -298,7 +298,7 @@
 										<li>
 											<a href="#">Adultos
 			                	<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationAdult;?>
+													<?php echo number_format($totalRealParticipationAdult, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationAdult/$totalRealParticipationAge * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -306,7 +306,7 @@
 										<li>
 											<a href="#">Adultos Mayores
 			                	<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationMayor;?>
+													<?php echo number_format($totalRealParticipationMayor, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationMayor/$totalRealParticipationGender * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -322,7 +322,7 @@
 										<li>
 											<a href="#">Rural
 		                  	<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationRural;?>
+													<?php echo number_format($totalRealParticipationRural, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationRural/$totalRealParticipationOrigin * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -330,7 +330,7 @@
 										<li>
 											<a href="#">Urbana
 												<span class="pull-right text-blue">
-													<?php echo $totalRealParticipationUrban;?>
+													<?php echo number_format($totalRealParticipationUrban, '0', ',','.');?>
 													<?php echo " (" . round($totalRealParticipationUrban/$totalRealParticipationOrigin * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -343,13 +343,13 @@
 						<br>
 						<div class="row">
 							<div class="col-md-6">
-								<h4>Recursos totales: <?php echo $totalResources;?></h4>
+								<h4>Recursos totales: <?php echo "$".number_format($totalResources, '0', ',','.');?></h4>
 								<div class="box-footer no-padding">
 		              <ul class="nav nav-pills nav-stacked">
 		                <li>
 											<a href="#">Dinero
 		                  	<span class="pull-right text-blue">
-													<?php echo $totalResourcesFinancial;?>
+													<?php echo "$".number_format($totalResourcesFinancial, '0', ',','.');?>
 													<?php echo " (" . round($totalResourcesFinancial/$totalResources * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -357,7 +357,7 @@
 		                <li>
 											<a href="#">Infraestructura
 												<span class="pull-right text-blue">
-													<?php echo $totalResourcesBuilding;?>
+													<?php echo "$".number_format($totalResourcesBuilding, '0', ',','.');?>
 													<?php echo " (" . round($totalResourcesBuilding/$totalResources * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -365,7 +365,7 @@
 										<li>
 											<a href="#">RR.HH.
 			                	<span class="pull-right text-blue">
-													<?php echo $totalResourcesHuman;?>
+													<?php echo "$".number_format($totalResourcesHuman, '0', ',','.');?>
 													<?php echo " (" . round($totalResourcesHuman/$totalResources * 100, 0) . "%)";?>
 												</span>
 											</a>
@@ -377,7 +377,7 @@
 						<br>
 						<div class="row">
 							<div class="col-md-6">
-								<h4>Unidades institucionales</h4>
+								<h4>Institutos</h4>
 								<div class="box-footer no-padding">
 		              <ul class="nav nav-pills nav-stacked">
 										<?php
@@ -385,7 +385,7 @@
 												<li>
 													<a href="#"> <?php echo $allUnits[$i]["nombre"];?>
 				                  	<span class="pull-right text-blue">
-															<?php echo sizeof($allUnitsCont[$i]);?>
+															<?php echo number_format(sizeof($allUnitsCont[$i]), '0', ',','.');?>
 															<?php echo " (" . round(sizeof($allUnitsCont[$i])/$sumaTotalUnits * 100, 0) . "%)";?>
 														</span>
 													</a>
@@ -405,7 +405,7 @@
 												<li>
 													<a href="#"> <?php echo $allEnvironments[$i]["nombre"];?>
 				                  	<span class="pull-right text-blue">
-															<?php echo sizeof($allEnvironmentsCont[$i]);?>
+															<?php echo number_format(sizeof($allEnvironmentsCont[$i]), '0', ',','.');?>
 															<?php echo " (" . round(sizeof($allEnvironmentsCont[$i])/$sumaTotalEnvironments * 100, 0) . "%)";?>
 														</span>
 													</a>
